@@ -1,0 +1,21 @@
+---
+title: "Explicación de Gitflow"
+author: "Tu Nombre"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## ¿Qué es Gitflow?
+
+Gitflow es un modelo de ramificación (*branching model*) para Git, creado por Vincent Driessen. Proporciona un marco de trabajo robusto para gestionar proyectos más grandes, definiendo un conjunto estricto de reglas sobre cómo deben crearse y fusionarse las ramas.
+
+### Ramas Principales
+En este modelo, el repositorio central mantiene dos ramas principales con vida infinita:
+* **`master` / `main`:** Contiene el código en estado de producción. Cada commit aquí representa una nueva versión liberada.
+* **`develop`:** Contiene el código con los últimos cambios entregados para la próxima versión. Es la rama de integración.
+
+### Ramas de Soporte
+Gitflow utiliza otras ramas temporales para ayudar al desarrollo paralelo:
+1. **Feature branches (Ramas de características):** Nacen de `develop` y se fusionan de vuelta a `develop`. Se usan para desarrollar nuevas características.
+2. **Release branches (Ramas de lanzamiento):** Nacen de `develop` y se fusionan a `main` y `develop`. Sirven para preparar una nueva versión a producción (arreglar bugs menores, metadatos).
+3. **Hotfix branches (Ramas de reparación rápida):** Nacen de `main` y se fusionan a `main` y `develop`. Se usan para corregir errores críticos en producción inmediatamente.
